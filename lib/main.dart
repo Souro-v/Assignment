@@ -22,39 +22,26 @@ void main(){
       return Scaffold(
 
         appBar: AppBar(
-          title: const Text('My Profile') ,
-          backgroundColor: Colors.amber,
+        title:const Text('Need Blood'),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
           actions:<Widget> [
             IconButton(
               icon: const Icon(Icons.add),
               onPressed: () {},
-
-            ),
-            IconButton(
-            icon: const Icon(Icons.settings),
-             onPressed: () {},
-            ),
-            IconButton(
-            icon: const Icon(Icons.call),
-            onPressed: () {},
+            color: Colors.white,
             ),
           ],
         ),
         body:  Column(
       mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             ProfileItem(
-             icon: Icons.icecream_rounded,
-              text: 'Ice Cream is very delicious right?',
+             icon: Icons.bloodtype,
+              text: 'Donate Blood',
+
             ),
-            ProfileItem(
-              icon: Icons.code,
-              text: "Programming is not boring if you love it",
-            ),
-           ProfileItem(
-             icon: Icons.egg_alt_outlined,
-             text: "If you submit code directly copy from chatgpt then mark will 0",
-           ),
           ],
         ),
       );
@@ -66,6 +53,7 @@ class ProfileItem extends StatelessWidget{
   final IconData icon;
   final String text;
 
+
    ProfileItem({required this.icon, required this.text});
 
   @override
@@ -73,14 +61,15 @@ class ProfileItem extends StatelessWidget{
   return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
+
         children: [
           CircleAvatar(
-            radius: 80,
-            backgroundColor: Colors.deepPurple.shade100,
+            radius: 120,
+            backgroundColor: Colors.black45,
             child: Icon(
                 icon,
-              size: 80,
-              color: Colors.purple.shade900,
+              size: 200,
+              color: Colors.red,
             ),
           ),
           SizedBox(height: 8),
@@ -88,9 +77,11 @@ class ProfileItem extends StatelessWidget{
             text,
             textAlign:TextAlign.center,
             style: TextStyle(
-                fontSize: 19
+                fontSize: 20
+
             ),
           )
+
         ],
       ),
     );
